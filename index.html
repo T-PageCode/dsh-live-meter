@@ -19,7 +19,7 @@
             transform: translate(-50%,-50%);
             color: white;
             font-size: 60px;
-            animation: main-text 0.7s forwards;
+            animation: main-text 1s forwards;
         }
         @keyframes main-text{
             from{
@@ -40,7 +40,7 @@
             transform: translate(-50%,-50%);
             color: white;
             font-size: 20px;
-            animation: plugin-text 0.7s forwards;
+            animation: plugin-text 1s forwards;
         }
         @keyframes plugin-text{
             from{
@@ -65,7 +65,7 @@
             border-radius: 20px;
             border: none;
             font-size: 18px;
-            animation: install-button 0.7s forwards;
+            animation: install-button 1s forwards;
             transition: width 0.3s ease;
         }
         @keyframes install-button{
@@ -116,6 +116,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: nav 1s forwards;
+        }
+        @keyframes nav{
+            from{
+                transform: translate(-50%,50%);
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+            to{
+                transform: translate(-50%,-50%);
+                filter: blur(0px);
+                opacity: 1;
+            }
         }
         #install-guides{
             position: absolute;
@@ -230,9 +243,29 @@
             transition: opacity 0.3s ease,
             width 0.3s ease;
         }
+        #black{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1;
+            animation: black-animation 1s forwards;
+            pointer-events: none;
+        }
+        @keyframes black-animation{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <div id="black"></div>
     <nav>
         <h1>DSH Live Meter</h1>
     </nav>
