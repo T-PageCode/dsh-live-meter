@@ -15,10 +15,12 @@ DeepSeek Harness余额监控插件（由DeepSeek Harness编写）
 ## 安装
 |网页版|桌面版|
 |-----|------|
-| ```dsh plugin --profile web add github:T-PageCode/dsh-live-meter```|使用DeepSeek Harness帮你安装或点击插件->添加插件输入github:T-PageCode/dsh-live-meter。
+| ```dsh plugin --profile web add github:T-PageCode/dsh-live-meter```|使用DeepSeek Harness帮你安装或点击插件 -> 添加插件输入github:T-PageCode/dsh-live-meter。
+
 > [!WARNING]
 > 网页版需要关闭dsh web后重新运行dsh web。
-> 桌面版需要点击托盘图标退出（或者打开任务管理器结束所有DeepSeek Harness进程）
+> 桌面版需要点击应用 -> 退出（或者打开任务管理器结束所有DeepSeek Harness进程）
+
 ## DSH安装命令
 帮我安装“`https://github.com/T-PageCode/dsh-live-meter`”DSH插件，全程自动安装，遇到兼容性问题就不安装了。
 
