@@ -1,0 +1,18 @@
+# 依赖与构建产物
+node_modules/
+*.tgz
+*.log
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 本机调试残留（从 DSH profile 备份出来的配置文件，含本机绝对路径，切勿入库）
+backup/
+backup-*/
+*.bak
+
+# 运行时数据（宿主写在 $DSH_HOME，不会落在这里，防手滑）
+.dsh-live-meter.json

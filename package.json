@@ -1,0 +1,36 @@
+{
+  "name": "dsh-live-meter",
+  "version": "0.2.0",
+  "description": "DeepSeek Harness 实时 Token 计量挂件：右下角悬浮面板，实时显示本次会话的输入、输出、缓存读 token，以及速率、轮次、会话时长、今日累计、7 日趋势与账户余额。纯展示层，不碰模型请求。",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "Images",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "token",
+    "usage",
+    "meter",
+    "balance"
+  ],
+  "scripts": {
+    "test": "node test/meter.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

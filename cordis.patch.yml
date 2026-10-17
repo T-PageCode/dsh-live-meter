@@ -1,0 +1,13 @@
+# dsh-live-meter bundle patch：插入本插件的加载条目。
+#
+# ⚠️ 命名注意事项（重要，别改回去）：
+#   本插件的 loader id 与包名**必须避开 `token-meter` / `tokenMeter`**。
+#   DSH 宿主内置了这两个名字（app.asar 里各出现 7 处 / 3 处），占用它会顶掉内置的
+#   tokenMeter 服务，导致核心的压缩链路永远等不到它就绪：
+#       compaction-basic: waiting for tokenMeter command-compact
+#                         waiting for tokenMeter tool-result-pruner
+#                         waiting for tokenMeter (gateway/internal)
+#   表现是「会话恢复失败、发不出消息」。所以这里用 live-meter。
+- insert:
+    - id: live-meter
+      name: dsh-live-meter
