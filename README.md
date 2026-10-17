@@ -19,7 +19,7 @@ DeepSeek Harness余额监控插件（由DeepSeek Harness编写）
 
 > [!WARNING]
 > 网页版需要关闭dsh web后重新运行dsh web。
-> 桌面版需要点击应用 -> 退出（或者打开任务管理器结束所有DeepSeek Harness进程）
+> 桌面版需要点击应用 -> 退出（或者打开任务管理器结束所有DeepSeek Harness进程），然后重新启动DeepSeek Harness。
 
 ## DSH安装命令
 帮我安装“`https://github.com/T-PageCode/dsh-live-meter`”DSH插件，全程自动安装，遇到兼容性问题就不安装了。
