@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-color: black;
+        }
+        *{
+            margin: 0;
+            white-space: nowrap;
+            font-weight: 300;
+            user-select: none;
+        }
+        #main-text{
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            font-size: 60px;
+            animation: main-text 0.7s forwards;
+        }
+        @keyframes main-text{
+            from{
+                transform: translate(-50%,0%);
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+            to{
+                transform: translate(-50%,-50%);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+        #plugin-text{
+            position: absolute;
+            top: 280px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            font-size: 20px;
+            animation: plugin-text 0.7s forwards;
+        }
+        @keyframes plugin-text{
+            from{
+                transform: translate(-50%,100%);
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+            to{
+                transform: translate(-50%,-50%);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+        #install-button{
+            position: absolute;
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 180px;
+            height: 40px;
+            background-color: white;
+            border-radius: 20px;
+            border: none;
+            font-size: 18px;
+            animation: install-button 0.7s forwards;
+            transition: width 0.3s ease;
+        }
+        @keyframes install-button{
+            from{
+                transform: translate(-50%,50%);
+                filter: blur(5px);
+                opacity: 0.5;
+            }
+            to{
+                transform: translate(-50%,-50%);
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+        #install-button:hover::before{
+            width: 100%;
+            opacity: 1;
+        }
+        #install-button:active{
+           width: 190px;
+        }
+        #install-button::before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgb(220,220,220);
+            width: 0px;
+            height: 100%;
+            border-radius: 50px;
+            content: "";
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease,
+            width 0.3s ease;
+        }
+        nav{
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 850px;
+            height: 50px;
+            background-color: rgb(50,50,50,0.4);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #install-guides{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        #guides{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0.8);
+            width: 550px;
+            height: 350px;
+            background-color: rgb(50,50,50);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease,
+            transform 0.3s ease;
+        }
+        #guides span{
+            background-color: rgb(70,70,70);
+            border-radius: 20px;
+            display: inline-block;
+            width: auto;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 3.5px;
+            user-select: text;
+        }
+        #guides span::selection{
+            color: rgb(100,255,255);
+        }
+        #guides h1,
+        #guides h2,
+        #guides h3,
+        #guides p{
+            text-align: center;
+            color: white;
+            margin-top: 10px;
+        }
+        #guides-close{
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            transform: scaleX(1.5);
+            width: 20px;
+            height: 30px;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #guides-close:hover::before{
+            width: 100%;
+            opacity: 1;
+        }
+        #guides-close::before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgb(80,80,80);
+            width: 0px;
+            height: 100%;
+            content: "";
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease,
+            width 0.2s ease;
+        }
+        #ok{
+            position: absolute;
+            top: 92%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 150px;
+            height: 35px;
+            background-color: white;
+            border-radius: 20px;
+            border: none;
+            font-size: 18px;
+            transition: width 0.3s ease;
+        }
+        #ok:hover::before{
+            width: 100%;
+            opacity: 1;
+        }
+        #ok:active{
+           width: 160px;
+        }
+        #ok::before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgb(220,220,220);
+            width: 0px;
+            height: 100%;
+            border-radius: 50px;
+            content: "";
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease,
+            width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>DSH Live Meter</h1>
+    </nav>
+    <h1 id="main-text">DSH Live Meter</h1>
+    <p id="plugin-text">余额监控插件</p>
+    <button id="install-button">立即安装</button>
+    <div id="install-guides">
+        <div id="guides">
+            <div id="guides-close">X</div>
+            <h1>安装DSH Live Meter</h1>
+            <h2>网页版安装</h2>
+            <p>点击插件 → 添加插件，输入<span>github:T-PageCode/dsh-live-meter</span>。</p>
+            <h2>桌面版安装</h2>
+            <h3>两种方法</h3>
+            <p>1.向DSH说：<span>帮我装github.com/T-PageCode/dsh-live-meter插件。</span></p>
+            <p>2.点击插件 → 添加插件，输入<span>github:T-PageCode/dsh-live-meter</span>。</p>
+            <button id="ok">我知道了</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("contextmenu",(e) => {
+            e.preventDefault();
+        })
+        const installGuides = document.getElementById("install-guides");
+        const guides = document.getElementById("guides");
+        const installButton = document.getElementById("install-button");
+        const ok = document.getElementById("ok");
+        const guidesClose = document.getElementById("guides-close")
+        installButton.onclick = () => {
+            installGuides.style.visibility = "visible";
+            installGuides.style.opacity = "1";
+            guides.style.transform = "translate(-50%,-50%) scale(1)";
+            guides.style.opacity = "1";
+        }
+        function closeGuides() {
+            installGuides.style.opacity = "0";
+            guides.style.transform = "translate(-50%,-50%) scale(0.8)";
+            guides.style.opacity = "0";
+            setTimeout(() => {
+                installGuides.style.visibility = "hidden";
+            },500)
+        }
+        ok.onclick = () => {
+            closeGuides();
+        }
+        guidesClose.onclick = () => {
+            closeGuides();
+        }
+    </script>
+</body>
+</html>
