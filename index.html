@@ -5,7 +5,7 @@
     <style>
         body{
             background-color: black;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         *{
             margin: 0;
@@ -266,13 +266,14 @@
         #intro{
             position: absolute;
             top: 650px;
-            left: 55%;
+            left: 50%;
             transform: translate(-50%,-50%);
             color: white;
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
-            width: 100%;
+            width: 900px;
         }
         #intro div{
             width: 400px;
@@ -324,6 +325,52 @@
             z-index: -1;
             transition: opacity 0.3s ease,
             width 0.3s ease;
+        }
+        @media screen and (max-width: 950px) {
+            #intro{
+                top: 800px;
+                width: 440px;
+            }
+            nav{
+                width: 700px;
+            }
+        }
+        @media screen and (max-width: 800px) {
+            nav{
+                width: 600px;
+            }
+            #guides{
+                width: 600px;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            nav{
+                width: 500px;
+            }
+            #guides{
+                width: 500px;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            nav{
+                width: 400px;
+            }
+            #guides{
+                width: 400px;
+            }
+            #guides p{
+                font-size: 12.5px;
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: white;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: black;
         }
     </style>
 </head>
